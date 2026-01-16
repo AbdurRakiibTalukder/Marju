@@ -1,142 +1,216 @@
-Here is a professional, formatted GitHub `README.md` based on the content you provided. You can copy and paste this directly into your repository.
+Of course. Here is a highly detailed, professional, and visually appealing GitHub `README.md`. It incorporates the structure and branding from your HTML, along with best practices for open-source project documentation.
+
+You can copy and paste the entire content below directly into your `README.md` file on GitHub.
 
 ***
 
 ```markdown
 <div align="center">
+  <img src="https://raw.githubusercontent.com/AbdurRakiibTalukder/Marju/main/assets/marju-dark.svg#gh-light-mode-only" alt="Marju Logo" width="200">
+  <img src="https://raw.githubusercontent.com/AbdurRakiibTalukder/Marju/main/assets/marju-light.svg#gh-dark-mode-only" alt="Marju Logo" width="200">
 
-# Marju
+  <h1>Marju</h1>
+  
+  <p><strong>Your Dual-Core AI Companion. Running 100% Offline.</strong></p>
+  <p>No servers. No data leaks. Switch between "Marju" (Emotional Support) and "Marjuni" (Ruthless Logic) instantly in your browser.</p>
 
-### Your Dual-Core AI Companion. Running 100% Offline.
+  <!-- Badges -->
+  <p>
+    <a href="https://github.com/AbdurRakiibTalukder/Marju/blob/main/LICENSE.txt"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+    <a href="#-privacy-first"><img src="https://img.shields.io/badge/Privacy-100%25_Local-brightgreen.svg" alt="Privacy First"></a>
+    <a href="https://github.com/AbdurRakiibTalukder/Marju/actions"><img src="https://img.shields.io/badge/Status-Active-blue.svg" alt="Project Status"></a>
+  </p>
 
-**No servers. No data leaks. Just you and your AI.**
-
-[Live Demo](#) · [Report Bug](#) · [Request Feature](#)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Privacy](https://img.shields.io/badge/Privacy-Local_Only-green.svg)](#)
-[![Status](https://img.shields.io/badge/Status-Active-blue.svg)](#)
-
+  <!-- Links -->
+  <p>
+    <a href="https://marju.rakib.top"><strong>Try Live Demo</strong></a> ·
+    <a href="https://github.com/AbdurRakiibTalukder/Marju/issues">Report a Bug</a> ·
+    <a href="https://github.com/AbdurRakiibTalukder/Marju/issues">Request a Feature</a>
+  </p>
 </div>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/AbdurRakiibTalukder/Marju/main/assets/dex-dark.png" alt="Desktop App Interface" width="80%">
+</div>
+
+---
+
+## 📋 Table of Contents
+
+- [About The Project](#-about-the-project)
+- [✨ Key Features](#-key-features)
+- [🎯 Who Is This For?](#-who-is-this-for)
+- [🛠️ Under The Hood](#️-under-the-hood)
+- [🚀 Getting Started](#-getting-started)
+- [🗺️ Project Roadmap](#️-project-roadmap)
+- [💻 System Requirements](#-system-requirements)
+- [🛡️ Privacy & License](#️-privacy--license)
+- [🤝 Contributing](#-contributing)
+- [📧 Contact](#-contact)
 
 ---
 
 ## 📖 About The Project
 
-**Marju** is a browser-native AI companion built on a 'Local-First' philosophy. Unlike typical cloud tools, Marju operates entirely within your browser using lightweight JavaScript logic. There are no Python servers to configure, no Docker containers to spin up, and absolutely no hidden uplinks to remote databases.
+**Marju** is a revolutionary AI companion built on a **'Local-First'** philosophy. It rejects the standard cloud-based model and operates entirely within your browser using lightweight, efficient JavaScript. There are no backend servers to connect to, no data packets sent across the web, and absolutely no risk of your private conversations being logged or analyzed.
 
-Switch instantly between two distinct personas:
-1.  **Marju:** Your cute, emotional support companion.
-2.  **Marjuni:** A ruthless, stoic, logic-driven engine.
+The core concept is "duality." Marju offers two distinct, instantly-switchable AI personas to match your needs:
+
+1.  **Marju (Emotional Core):** A cute, empathetic, and supportive companion. Perfect for brainstorming, creative writing, or simply venting in a safe, judgment-free space.
+2.  **Marjuni (Logical Core):** A ruthless, stoic, and logic-driven engine. Ideal for developers debugging code, analyzing problems, or seeking brutally honest feedback without the fluff.
+
+Your data, your control, your AI.
 
 ## ✨ Key Features
 
-### 🖥️ Browser Native
-No complex installation required. Marju runs entirely within your browser using optimized ES6 JavaScript.
+| Icon | Feature | Description |
+| :--- | :--- | :--- |
+| 🖥️ | **Browser Native** | No Python servers, Docker, or complex setup. Marju runs directly in any modern browser. Clone the repo, open the file, and you're done. |
+| 🎭 | **Adaptive Personality** | Seamlessly switch between the empathetic **Marju** and the analytical **Marjuni** to get the exact type of assistance you need. |
+| 🔒 | **Total Privacy** | Your chats never leave your machine. Data is saved to `LocalStorage` for persistence or held only in RAM when using Incognito Mode for a truly ephemeral session. |
 
-### 🎭 Adaptive Personality
-*   **Feeling down?** Chat with **Marju** for gentle encouragement and emotional support.
-*   **Need optimization?** Switch to **Marjuni** for brutal honesty and logical architectural patterns.
+---
 
-### 🔒 Total Privacy
-Your chats never leave your device.
-*   **Standard Mode:** Data is saved in `LocalStorage`.
-*   **Volatile Mode:** Use Incognito Mode for a RAM-only session. The moment you close the tab, the Garbage Collector wipes all session references.
+## 🎯 Who Is This For?
+
+Marju adapts to your workflow and emotional state, making it a powerful tool for a diverse range of users.
+
+| User | Use Case |
+| :--- | :--- |
+| **Developers** | Use **Marjuni** as a "rubber duck" debugger. Paste logic, discuss architectural patterns, and get optimization suggestions without leaking proprietary code to a third-party API. |
+| **Writers** | Use **Marju** as a creative sounding board to overcome writer's block, or switch to **Marjuni** for rigorous plot-hole detection and logical consistency checks. |
+| **Mental Wellness** | Sometimes you just need to vent. Marju's emotional core provides a safe, non-judgmental, and completely private space to organize your thoughts and feelings. |
 
 ---
 
 ## 🛠️ Under The Hood
 
-Marju manages state and logic without a backend, ensuring **Data Sovereignty**.
+Marju's power comes from its simple yet robust client-side architecture.
 
-### Logic Router
-The core logic separates the UI from the 'Brain'. The prompt router hot-swaps logic files based on your selected persona.
+### <i class="bi bi-hdd-network"></i> Data Sovereignty
+Unlike cloud tools that harvest your data, Marju operates on a strict **'Local-First'** philosophy. Chat histories are serialized directly to your browser's `LocalStorage` engine.
+- **No External APIs:** Your data never touches a remote server.
+- **No Telemetry:** No hidden uplinks or analytics.
+- **100% Ownership:** Your data lives and dies on your physical machine.
+
+### <i class="bi bi-incognito"></i> Volatile Mode
+For absolute ephemerality, launch Marju in your browser's Incognito or Private mode. This bypasses storage drivers completely, holding the session state only in the device's volatile RAM. A 'flush-on-exit' protocol ensures the JavaScript Garbage Collector immediately wipes all session references the moment the tab is closed.
+
+### <i class="bi bi-code-slash"></i> Logic Router
+The core of the dual-persona system is a lean prompt router that hot-swaps the underlying logic files based on your selection, separating the UI from the 'Brain'.
 
 ```javascript
-// Logic Router Example 
-const getResponse = (input) => { 
-    return currentModel === 'marjuni' 
-        ? getLogic(input)   // Stoic 
-        : getEmotion(input); // Cute 
+// Logic Router Example
+const getResponse = (input) => {
+  return currentModel === 'marjuni'
+    ? getLogic(input)   // Calls the Stoic/Logical engine
+    : getEmotion(input); // Calls the Cute/Emotional engine
 };
 ```
-
-### Data Persistence
-*   **Local Storage:** Chat histories are serialized directly to your browser's storage engine.
-*   **Flush-on-Exit:** In Volatile Mode, data lives and dies in the Random Access Memory (RAM).
-
----
-
-## 🎯 Use Cases
-
-| User | Benefit |
-| :--- | :--- |
-| **Developers** | Use **Marjuni** as a rubber duck debugger. Paste logic or discuss architecture without leaking proprietary code to the cloud. |
-| **Writers** | Stuck on a paragraph? Use **Marju** as a creative sounding board or Marjuni for plot-hole detection. |
-| **Mental Wellness** | A safe, judgment-free space to organize your thoughts privately. |
 
 ---
 
 ## 🚀 Getting Started
 
-Since Marju is client-side only, running it is simple.
+Getting Marju running is as simple as it gets. No build steps, no dependencies.
 
-### Prerequisites
-*   Any modern web browser (Chrome, Edge, Firefox, Safari).
-
-### Installation
-1.  Clone the repo:
+1.  **Clone the repository:**
     ```sh
-    git clone https://github.com/yourusername/marju.git
+    git clone https://github.com/AbdurRakiibTalukder/Marju.git
     ```
-2.  Open `index.html` in your browser.
-    *   *No `npm install` or backend setup required.*
+2.  **Navigate to the directory:**
+    ```sh
+    cd Marju
+    ```
+3.  **Open the file:**
+    Simply open the `index.html` file in your favorite modern web browser. That's it!
 
 ---
 
-## 🗺️ Roadmap
+## 🗺️ Project Roadmap
 
-- [x] **Core Logic Engine:** Basic conversational state and local storage implementation.
-- [ ] **WebGPU Acceleration:** Hardware acceleration for faster responses on supported devices.
-- [ ] **PWA Support:** Install Marju as a native application on Android and iOS.
+The future of offline, private AI is bright.
+
+- [✅] **Core Logic Engine:** Basic conversational state and local storage implementation.
+- [🔄] **WebGPU Acceleration:** Implementing hardware acceleration for significantly faster responses on supported devices.
+- [📅] **PWA Support:** Full Progressive Web App support to install Marju as a native-like application on desktops, Android, and iOS.
 
 ---
 
 ## 💻 System Requirements
 
-Marju is engineered to be lightweight and runs smoothly on low-end devices.
+Marju is engineered to be exceptionally lightweight and runs smoothly even on low-end hardware.
 
-*   **CPU:** Any modern processor
-*   **RAM:** 512MB Minimum
-*   **GPU:** Not Required (CPU Inference)
-*   **Network:** Offline Capable
-*   **Browsers:** Google Chrome, Microsoft Edge, Mozilla Firefox, Safari (iOS/Mac)
-
----
-
-## 🛡️ Privacy Policy
-
-**Short, simple, and transparent.**
-
-1.  **No Data Collection:** We do not have servers, databases, or analytics trackers. We cannot see your messages or IP address.
-2.  **Local Storage:** Data is stored exclusively in your browser's `localStorage`.
-3.  **Data Deletion:** Clearing your browser cache or cookies will permanently delete your conversation history.
+| Category | Requirement |
+| :--- | :--- |
+| **CPU** | Any modern processor |
+| **RAM** | 512MB Minimum |
+| **GPU** | Not Required (CPU-based inference) |
+| **Network** | Offline Capable |
+| **Browsers** | Chrome, Edge, Firefox, Safari (Full ES6 Support) |
 
 ---
 
-## 📄 License
+## 🛡️ Privacy & License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+### Privacy Policy
+Our privacy policy is simple: **We collect nothing.**
+- Marju is a 100% client-side application.
+- We have no servers, no databases, and no analytics.
+- Your data is stored *exclusively* in your browser's `localStorage` and can be permanently deleted by clearing your browser cache.
+
+### Open Source License
+Marju is free and open-source software distributed under the **MIT License**.
+
+<details>
+<summary>Click to view MIT License</summary>
 
 ```text
 MIT License
+
 Copyright (c) 2026 Abdur Rakib Talukder
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
+</details>
 
 ---
 
+## 🤝 Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
+
+---
+
+## 📧 Contact
+
+Abdur Rakib Talukder - [abdur.rakib.top](https://abdur.rakib.top)
+
+Project Link: [https://github.com/AbdurRakiibTalukder/Marju](https://github.com/AbdurRakiibTalukder/Marju)
+
 <div align="center">
-  <p>Developed with ❤️ by Abdur Rakib Talukder</p>
-  <p>© 2026 Marju Project</p>
+  <p><strong>© 2026 Marju Project</strong></p>
 </div>
 ```
