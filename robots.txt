@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /dash
+Disallow: /models
+Sitemap: https://marju.rakib.top/sitemap.xml

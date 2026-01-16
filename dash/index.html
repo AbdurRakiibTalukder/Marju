@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marju - Dashboard</title>
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="preload">
+    
+    <!-- PRELOADER -->
+    <div id="app-preloader">
+        <img src="../assets/butterfly.svg" alt="Loading...">
+    </div>
+
+    <div id="copyToast" class="copy-toast">Copied! <i class="bi bi-check-lg"></i></div>
+
+    <!-- SETTINGS & PROFILE MODAL -->
+    <div class="modal-overlay" id="settingsModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Settings</h3>
+                <button class="close-modal" id="closeSettings">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            </div>
+
+            <div class="profile-edit-container">
+                <div class="profile-edit-avatar-wrapper">
+                    <img src="" id="settingsAvatarPreview" class="profile-edit-avatar">
+                    <label for="avatarInput" class="avatar-upload-label" title="Change Photo">
+                        <i class="bi bi-camera-fill"></i>
+                    </label>
+                    <input type="file" id="avatarInput" accept="image/*">
+                </div>
+                
+                <div class="input-group">
+                    <input type="text" id="editName" class="settings-input" placeholder="Your Name" maxlength="25">
+                    <input type="email" id="editEmail" class="settings-input" placeholder="Your Email">
+                    <button id="saveProfileBtn" class="save-profile-btn">
+                        <i class="bi bi-check2"></i> Save Profile
+                    </button>
+                </div>
+            </div>
+            
+            <div class="setting-section-title">App Settings</div>
+            <div class="setting-item">
+                <span>Dark Mode</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="themeToggleCheckbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <span>Manage Data</span>
+                <button onclick="clearAllDataConfirm()" class="danger-btn">
+                    <i class="bi bi-trash3-fill"></i> Clear All Data
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CUSTOM DIALOG MODAL -->
+    <div class="modal-overlay" id="customDialog">
+        <div class="modal-box">
+            <h3 id="dialogTitle">Title</h3>
+            <p id="dialogMessage" style="margin-top: 10px; color: var(--text-muted); line-height: 1.5;">Message goes here...</p>
+            <input type="text" id="dialogInput" class="dialog-input" style="display: none;" autocomplete="off">
+            <div class="dialog-btn-container">
+                <button class="modal-btn secondary" id="dialogCancelBtn">Cancel</button>
+                <button class="modal-btn primary" id="dialogConfirmBtn">Confirm</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="customContextMenu" class="custom-context-menu">
+        <div class="menu-opt" id="contextRename"><i class="bi bi-pencil"></i> Rename</div>
+        <div class="menu-opt delete" id="contextDelete"><i class="bi bi-trash"></i> Delete</div>
+    </div>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-sidebar-overlay" id="mobileSidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="sidebar">
+        <button class="toggle-sidebar-btn" id="toggleSidebarBtn"><i class="bi bi-layout-sidebar"></i></button>
+        <div class="logo-area" id="sidebarLogoArea">
+            <img src="../assets/marju-dark.svg" alt="Logo" class="logo-img logo-dark">
+            <img src="../assets/marju-light.svg" alt="Logo" class="logo-img logo-light">
+            <img src="../assets/butterfly-dark.svg" alt="Anon Logo" class="logo-img logo-anon-dark">
+            <img src="../assets/butterfly-light.svg" alt="Anon Logo" class="logo-img logo-anon-light">
+            <img src="../assets/butterfly.svg" alt="Mini Logo" class="logo-img logo-mini-normal">
+            <img src="../assets/butterfly-dark.svg" alt="Mini Logo" class="logo-img logo-mini-anon-dark">
+            <img src="../assets/butterfly-light.svg" alt="Mini Logo" class="logo-img logo-mini-anon-light">
+        </div>
+
+        <div class="new-chat-container">
+            <button class="new-chat-btn" id="newChatBtn">
+                <i class="bi bi-plus-lg"></i> New Chat
+            </button>
+        </div>
+
+        <!-- FIX: This container will hold the model selector on mobile -->
+        <div id="mobileModelSelectorContainer" class="mobile-model-selector-container"></div>
+
+        <div class="history-label">Chat History</div>
+        
+        <div class="history-wrapper">
+            <div class="fade-overlay-top" id="historyFadeTop"></div>
+            <div class="history-list" id="historyList"></div>
+            <div class="fade-overlay-bottom"></div>
+        </div>
+
+        <!-- USER PROFILE -->
+        <div class="sidebar-footer">
+            <div class="user-profile-card" id="userProfileCard" title="Edit Profile & Settings">
+                <img src="" id="sidebarAvatar" alt="User" class="profile-avatar">
+                <div class="profile-info">
+                    <div class="profile-name" id="sidebarName">Guest</div>
+                    <div class="profile-email" id="sidebarEmail">user@marju</div>
+                </div>
+                <a href="https://www.buymeacoffee.com/yourusername" target="_blank" class="donate-btn" title="Support the project!">
+                    <i class="bi bi-heart-fill"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <div class="mobile-butterfly-trigger" id="mobileButterflyTrigger">
+            <img src="../assets/butterfly.svg" alt="Open Menu" class="trig-normal">
+            <img src="../assets/butterfly-dark.svg" alt="Anon Dark" class="trig-anon-dark">
+            <img src="../assets/butterfly-light.svg" alt="Anon Light" class="trig-anon-light">
+        </div>
+
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <div class="chat-header-info" id="chatHeaderInfo">
+                    <h2 id="currentChatTitle">New Chat</h2>
+                </div>
+            </div>
+            <div class="top-bar-center">
+                <div class="model-selector-wrapper" id="modelSelectorWrapper">
+                    <button class="selected-model-btn" id="selectedModelBtn">
+                        <span id="selectedModelName">Marju Tuni</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="model-dropdown" id="modelDropdown">
+                        <!-- AI Models will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <div class="incognito-btn-wrapper">
+                    <button id="incognitoBtn" class="incognito-btn" title="Private Options"><i class="bi bi-incognito"></i></button>
+                    <div class="incognito-menu" id="incognitoMenu">
+                        <div class="menu-opt" id="optTempMsgItem" style="justify-content: space-between; cursor: default;">
+                            <div style="display:flex; align-items:center; gap:8px;"><i class="bi bi-stopwatch"></i> Temp Msg</div>
+                            <label class="toggle-switch" style="transform: scale(0.8); margin-right: -5px;">
+                                <input type="checkbox" id="tempMsgCheckbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="menu-opt" id="optPrivateChat"><i class="bi bi-eye-slash-fill"></i> New Private Chat</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="welcome-screen" id="welcomeScreen">
+            <h1>What’s on the agenda today?</h1>
+        </div>
+        
+        <div class="chat-fade-mask-top" id="chatFadeMaskTop"></div>
+        <div class="chat-container" id="chatContainer">
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+        </div>
+        <div class="chat-fade-mask-bottom" id="chatFadeMaskBottom"></div>
+
+        <div class="input-area" id="inputArea">
+            <div class="emoji-picker" id="emojiPicker"></div>
+            <div class="input-wrapper">
+                <input type="text" id="userInput" placeholder="Type something cute..." autocomplete="off">
+                <div class="input-actions">
+                    <button class="emoji-btn" id="emojiBtn"><i class="bi bi-emoji-smile"></i></button>
+                    <button class="send-btn" id="sendBtn"><i class="bi bi-arrow-up"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- Load External Models -->
+    <script src="../models/marju.js"></script>
+    <script src="../models/marjuni.js"></script>
+
+    <script src="main.js"></script>
+</body>
+</html>

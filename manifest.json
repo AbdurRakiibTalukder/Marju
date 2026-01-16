@@ -1,0 +1,30 @@
+{
+  "id": "/",
+  "name": "Marju - Local AI Interface",
+  "short_name": "Marju",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FF8DA1",
+  "description": "Your Dual-Core AI Companion. Running 100% Offline.",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="manifest" href="/manifest.json">
+
+    <meta name="theme-color" content="#FF8DA1">
+
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Marju">
+    <link rel="apple-touch-icon" href="/assets/android-chrome-192x192.png">
+
+    <title>Marju Project - Local AI Interface</title>
+    <meta name="description" content="Marju is a dual-core AI companion that runs entirely offline in your browser. Switch between emotional support and ruthless logic without any data leaving your device.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://marju.rakib.top/">
+
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Quicksand:wght@500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css' rel='stylesheet'/>
+    <script>
+        // --- 1. FORCE SCROLL TO TOP ON REFRESH ---
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+    </script>
+</head>
+<body class="preload">
+    
+    <!-- PRELOADER -->
+    <div id="app-preloader">
+        <img src="assets/butterfly.svg" alt="Loading..." onerror="this.src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/icons/hourglass-split.svg'">
+    </div>
+
+    <!-- DECORATIVE BACKGROUND -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <!-- NAV -->
+    <nav class="nav-saas">
+        <a href="#" class="nav-brand">
+            <img src="assets/marju-dark.svg" class="img-light" height="32" alt="Marju" onerror="this.style.display='none'; this.parentNode.innerText='Marju AI'">
+            <img src="assets/marju-light.svg" class="img-dark" height="32" alt="Marju" onerror="this.style.display='none'; this.parentNode.innerText='Marju AI'">
+        </a>
+        <div class="nav-links">
+            <button class="btn-theme" id="themeToggle" aria-label="Toggle Dark Mode"><i class="bi bi-moon-fill"></i></button>
+            <a href="/dash" class="btn-launch">Dashboard</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero hidden-el">
+        <h1>Your Dual-Core AI Companion.<br>Running 100% Offline.</h1>
+        <p>No servers. No data leaks. Switch between "Marju" (Emotional Support) and "Marjuni" (Ruthless Logic) instantly in your browser.</p>
+        <div style="margin-top: 35px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; align-items: center;">
+            <a href="#features" class="btn-text">How it works</a>
+            <a href="/dash" class="btn-launch">Try Live Demo <i class="bi bi-arrow-right"></i></a>
+        </div>
+    </header>
+
+    <!-- DEVICE SHOWCASE -->
+    <section class="showcase-wrapper hidden-el delay-200">
+        <div class="desktop-showcase" style="width: 100%;">
+            <div class="img-container">
+                <img src="assets/dex-white.png" class="showcase-img img-light" alt="Desktop App Interface" onerror="this.src='https://placehold.co/1200x800/f8f9fa/e2e8f0?text=Marju+Desktop+Preview'">
+                <img src="assets/dex-dark.png" class="showcase-img img-dark" alt="Desktop App Interface" onerror="this.src='https://placehold.co/1200x800/171717/333333?text=Marju+Desktop+Dark+Mode'">
+            </div>
+        </div>
+        <div class="mobile-showcase" style="width: 100%;">
+            <div class="img-container">
+                <img src="assets/m-white.png" class="showcase-img img-light" alt="Mobile App Interface" onerror="this.src='https://placehold.co/400x800/f8f9fa/e2e8f0?text=Mobile+View'">
+                <img src="assets/m-dark.png" class="showcase-img img-dark" alt="Mobile App Interface" onerror="this.src='https://placehold.co/400x800/171717/333333?text=Mobile+Dark+View'">
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="content-section alt">
+        <div class="container">
+            <div class="section-header hidden-el">
+                <h2>Why Marju?</h2>
+                <p>The privacy of local execution. The personality of a friend.</p>
+            </div>
+            <div class="grid">
+                <div class="card hidden-el delay-100">
+                    <div class="feature-icon"><i class="bi bi-cpu"></i></div>
+                    <h3>Browser Native</h3>
+                    <p>No Python servers or Docker containers required. Marju runs entirely within your browser using lightweight JavaScript logic.</p>
+                </div>
+                <div class="card hidden-el delay-200">
+                    <div class="feature-icon"><i class="bi bi-chat-heart"></i></div>
+                    <h3>Adaptive Personality</h3>
+                    <p>Feeling down? Chat with <strong>Marju</strong> (Cute/Emotional). Need brutal honesty? Switch to <strong>Marjuni</strong> (Stoic/Logical).</p>
+                </div>
+                <div class="card hidden-el delay-300">
+                    <div class="feature-icon"><i class="bi bi-shield-lock"></i></div>
+                    <h3>Total Privacy</h3>
+                    <p>Your chats never leave your device. Data is saved in LocalStorage, or use Incognito Mode for volatile, RAM-only sessions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USE CASES -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header hidden-el">
+                <h2>Who is this for?</h2>
+                <p>Marju adapts to your workflow and emotional state.</p>
+            </div>
+            <div class="grid">
+                <div class="card hidden-el">
+                    <div class="feature-icon"><i class="bi bi-terminal"></i></div>
+                    <h3>Developers</h3>
+                    <p>Use "Marjuni" as a rubber duck debugger. Paste logic, ask for optimization, or discuss architectural patterns without leaking proprietary code to the cloud.</p>
+                </div>
+                <div class="card hidden-el delay-100">
+                    <div class="feature-icon"><i class="bi bi-journal-richtext"></i></div>
+                    <h3>Writers</h3>
+                    <p>Stuck on a paragraph? Marju acts as a creative sounding board, offering gentle encouragement or logical plot-hole detection depending on the mode you choose.</p>
+                </div>
+                <div class="card hidden-el delay-200">
+                    <div class="feature-icon"><i class="bi bi-person-heart"></i></div>
+                    <h3>Mental Wellness</h3>
+                    <p>Sometimes you just need to vent. Marju's emotional core provides a safe, judgment-free space to organize your thoughts privately.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- TECHNICAL ARCHITECTURE -->
+    <section class="content-section alt">
+        <div class="container">
+            <div class="section-header hidden-el">
+                <h2>Under The Hood</h2>
+                <p>How Marju manages state and logic without a backend.</p>
+            </div>
+
+            <div class="grid">
+                <div class="card hidden-el">
+                    <h3 style="color: var(--primary)"><i class="bi bi-hdd-network"></i> Data Sovereignty</h3>
+                    <p>Unlike typical cloud tools, Marju operates on a 'Local-First' philosophy. Chat histories are serialized directly to your browser's <code>LocalStorage</code> engine without ever touching an external API. There is no remote database, no telemetry, and no hidden uplinks. You retain 100% sovereignty over your data, which lives and dies on your physical machine.</p>
+                </div>
+                
+                <div class="card hidden-el delay-100">
+                    <h3 style="color: var(--primary)"><i class="bi bi-incognito"></i> Volatile Mode</h3>
+                    <p>Activate Incognito for a strictly ephemeral experience. This bypasses the storage drivers completely, holding state only in the device's volatile RAM (Random Access Memory). It utilizes a 'flush-on-exit' protocol where the JavaScript Garbage Collector immediately wipes all session references the moment the tab is closed.</p>
+                </div>
+
+                <div class="card hidden-el delay-200">
+                    <h3 style="color: var(--primary)"><i class="bi bi-code-slash"></i> Logic Router</h3>
+                    <p>The core logic separates the UI from the 'Brain'. The prompt router hot-swaps logic files based on your selected persona.</p>
+                    
+                    <div class="code-snippet window">
+<span class="code-comment">// Logic Router Example</span>
+<span class="code-keyword">const</span> <span class="code-func">getResponse</span> = (input) => {
+  <span class="code-keyword">return</span> currentModel === <span class="code-str">'marjuni'</span>
+    ? <span class="code-func">getLogic</span>(input)  <span class="code-comment">// Stoic</span>
+    : <span class="code-func">getEmotion</span>(input); <span class="code-comment">// Cute</span>
+};</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header hidden-el">
+                <h2>Project Roadmap</h2>
+                <p>The future of offline AI.</p>
+            </div>
+            <div class="card hidden-el" style="max-width: 800px; margin: 0 auto;">
+                <div class="roadmap-item">
+                    <span class="roadmap-status status-done">Done</span>
+                    <div>
+                        <h4>Core Logic Engine</h4>
+                        <p style="font-size: 14px; color: var(--text-muted);">Basic conversational state and local storage implementation.</p>
+                    </div>
+                </div>
+                <div class="roadmap-item">
+                    <span class="roadmap-status status-wip">In Prog</span>
+                    <div>
+                        <h4>WebGPU Acceleration</h4>
+                        <p style="font-size: 14px; color: var(--text-muted);">Implementing hardware acceleration for faster responses on supported devices.</p>
+                    </div>
+                </div>
+                <div class="roadmap-item">
+                    <span class="roadmap-status status-plan">Planned</span>
+                    <div>
+                        <h4>PWA Support</h4>
+                        <p style="font-size: 14px; color: var(--text-muted);">Install Marju as a native application on Android and iOS.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRIVACY POLICY -->
+    <section class="content-section alt" id="privacy">
+        <div class="container">
+            <div class="section-header hidden-el">
+                <h2>Privacy Policy</h2>
+                <p>Short, simple, and transparent.</p>
+            </div>
+            <div class="grid">
+                <div class="card hidden-el">
+                    <h3><i class="bi bi-eye-slash-fill" style="color: var(--primary); margin-right: 10px;"></i> No Data Collection</h3>
+                    <p>Marju is a client-side application. We do not have servers, databases, or analytics trackers. We cannot see your messages, your IP address, or your usage patterns even if we wanted to.</p>
+                </div>
+                <div class="card hidden-el delay-100">
+                    <h3><i class="bi bi-sd-card-fill" style="color: var(--primary); margin-right: 10px;"></i> Local Storage</h3>
+                    <p>Data is stored exclusively in your browser's <code>localStorage</code>. This data stays on your specific device. Clearing your browser cache or cookies will permanently delete your conversation history.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LICENSE SECTION -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header hidden-el">
+                <h2>Open Source License</h2>
+                <p>Marju is free software distributed under the MIT License.</p>
+            </div>
+            <div class="card hidden-el" style="padding: 0; overflow: hidden; background: var(--code-bg); border-color: var(--border)">
+                <div style="padding: 15px; border-bottom: var(--border); display: flex; gap: 10px;">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444;"></div>
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b;"></div>
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #10b981;"></div>
+                    <span style="margin-left: 10px; font-family: monospace; font-size: 12px; color: #9ca3af;">LICENSE.txt</span>
+                </div>
+                <div class="code-snippet" style="border: none; border-radius: 0; max-height: 400px; margin: 0;">
+<span class="code-comment">MIT License</span>
+
+Copyright (c) 2026 Abdur Rakib Talukder
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+<span class="code-keyword">THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SYSTEM REQS -->
+    <section class="content-section alt">
+        <div class="container">
+            <div class="section-header hidden-el">
+                <h2>System Requirements</h2>
+                <p>Marju is optimized for efficiency and runs on almost anything.</p>
+            </div>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="card hidden-el" style="border: 2px solid var(--border);">
+                    <h3>Supported Browsers</h3>
+                    <p>Fully compatible with all modern web engines that support ES6. No complex installation required.</p>
+                    <ul class="checklist">
+                        <li><i class="bi bi-check-circle-fill"></i> Google Chrome (Desktop/Mobile)</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Microsoft Edge</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Mozilla Firefox</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Safari (iOS/Mac)</li>
+                    </ul>
+                </div>
+                <div class="card hidden-el delay-100" style="border: 2px solid var(--primary);">
+                    <h3>Hardware Specs</h3>
+                    <p>Engineered to be lightweight. Runs smoothly on low-end devices and older laptops.</p>
+                    <ul class="checklist">
+                        <li><i class="bi bi-check-circle-fill"></i> <strong>CPU:</strong> Any modern processor</li>
+                        <li><i class="bi bi-check-circle-fill"></i> <strong>RAM:</strong> 512MB Minimum</li>
+                        <li><i class="bi bi-check-circle-fill"></i> <strong>GPU:</strong> Not Required (CPU Inference)</li>
+                        <li><i class="bi bi-check-circle-fill"></i> <strong>Network:</strong> Offline Capable</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-box hidden-el">
+            <div class="cta-content">
+                <h2 style="font-family:'Quicksand'; font-size: 32px; margin-bottom: 20px; color: var(--text-main);">Ready to take control?</h2>
+                <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 18px;">Experience the freedom of local, private AI. Open source and free forever.</p>
+                <a href="/dash" class="btn-launch" style="padding: 15px 40px; font-size: 16px;">Launch Marju Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTALL POPUP (HIDDEN BY DEFAULT) -->
+    <div id="installPopup" class="install-popup slide-out">
+        <div class="install-icon">
+            <img src="assets/favicon.ico" alt="Icon" width="24" height="24" onerror="this.src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/icons/app-indicator.svg'">
+        </div>
+        <div class="install-content">
+            <h4>Install Marju AI</h4>
+            <p id="installInstructions">
+                <!-- Text injected by JS -->
+            </p>
+        </div>
+        <button class="btn-close-popup" id="closeInstallBtn" aria-label="Close">
+            <i class="bi bi-x"></i>
+        </button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026  <a href="https://github.com/AbdurRakiibTalukder/Marju" target="_blank" class="dev-link">Marju Project</a>. Released under the MIT License.</p>
+        <p style="margin-top: 10px;">
+            Developed by 
+            <a href="https://abdur.rakib.top" target="_blank" class="dev-link">Abdur Rakib Talukder</a>
+        </p>
+    </footer>
+
+    <script src="main.js"></script>
+
+    <script>
+         if ("serviceWorker" in navigator) {
+               window.addEventListener("load", () => {
+              navigator.serviceWorker.register("/sw.js");
+            });
+        }
+</script>
+
+
+</body>
+</html>
