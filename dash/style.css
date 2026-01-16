@@ -626,7 +626,7 @@
              * from being obscured by the browser's navigation UI.
              */
             .input-area { padding: 0 15px 50px 15px; }
-            .input-area.centered { width: 100%; bottom: 0; transform: translateX(-50%); padding: 0 15px 30px 15px; }
+            .input-area.centered { width: 100%; bottom: 0; transform: translateX(-50%); padding: 0 15px 50px 15px; }
 
             .welcome-screen { padding: 0 15px; }
             /* .input-area.centered { width: 100%; bottom: 0; transform: translateX(-50%); padding: 0 15px 20px 15px; } */
