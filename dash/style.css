@@ -1,4 +1,4 @@
-/* --- CSS VARIABLES --- */
+  /* --- CSS VARIABLES --- */
         :root {
             --primary: #FF8DA1; 
             --primary-hover: #ff708a;
@@ -85,7 +85,7 @@
 
         body:not(.incognito-mode) .sidebar.collapsed .logo-mini-normal { display: block !important; }
         body.incognito-mode:not(.dark-mode) .sidebar.collapsed .logo-mini-anon-dark { display: block !important; }
-        body.incognito-mode.dark-mode .sidebar.collapsed .logo-mini-anon-light { display: block !importanT; }
+        body.incognito-mode.dark-mode .sidebar.collapsed .logo-mini-anon-light { display: block !important; }
 
         /* --- SIDEBAR --- */
         .sidebar {
@@ -618,9 +618,18 @@
             .chat-header-info h2 { max-width: calc(100vw - 150px); }
 
             .chat-container { padding: 20px 15px 130px 15px; }
-            .input-area { padding: 0 15px 20px 15px; }
+            
+            /**
+             * BUG FIX:
+             * Increased the bottom padding from 20px to 30px.
+             * This lifts the input container on mobile screens to prevent it
+             * from being obscured by the browser's navigation UI.
+             */
+            .input-area { padding: 0 15px 50px 15px; }
+            .input-area.centered { width: 100%; bottom: 0; transform: translateX(-50%); padding: 0 15px 30px 15px; }
+
             .welcome-screen { padding: 0 15px; }
-            .input-area.centered { width: 100%; bottom: 0; transform: translateX(-50%); padding: 0 15px 20px 15px; }
+            /* .input-area.centered { width: 100%; bottom: 0; transform: translateX(-50%); padding: 0 15px 20px 15px; } */
 
             .sidebar.collapsed .new-chat-container, .sidebar.collapsed .history-label, .sidebar.collapsed .history-wrapper,
             .sidebar.collapsed .profile-info, .sidebar.collapsed .donate-btn { display: block !important; }
