@@ -593,45 +593,30 @@ body.dark-mode.incognito-mode .copy-toast { color: black; }
     .top-bar-left { justify-content: flex-start; }
     .chat-header-info h2 { max-width: calc(100vw - 150px); }
 
-    .chat-container { padding: 20px 15px 150px 15px; } /* Increased bottom padding to make space */
+    .chat-container { padding: 20px 15px 130px 15px; }
     
     /**
-     * NEW FLOATING INPUT STYLE (Mimics Install Popup)
-     * This positions the entire input area as a floating box, inset
-     * from the screen edges, and properly spaced above the home bar.
+     * UPDATED TO MATCH POPUP STYLE:
+     * The input area now has padding to create a "floating" effect.
+     * The safe-area-inset ensures it doesn't get hidden by the iPhone home bar.
      */
-    .input-area {
-        /* 1. Set insets instead of using padding */
-        left: 15px;
-        right: 15px;
-        bottom: calc(15px + env(safe-area-inset-bottom));
-
-        /* 2. Reset old positioning and sizing properties */
-        padding: 0;
-        width: auto; /* Let left/right properties define the width */
-        transform: none; /* Remove the translateX centering */
+    .input-area { 
+        padding: 0 15px 70px;
+    }
+    .input-area.centered { 
+        width: 100%; 
+        bottom: 0; 
+        padding: 0 15px 170px;
     }
 
-    .input-area.centered {
-        /* 3. Ensure the 'centered' state uses the same new style */
-        left: 15px;
-        right: 15px;
-        bottom: calc(15px + env(safe-area-inset-bottom));
-        width: auto;
-        padding: 0;
-        transform: none;
-    }
-
-    /* 4. Style the wrapper to look like the popup card */
+    /* This is the main style change */
     .input-wrapper {
-        border-radius: 50px; /* Rounded rectangle shape */
-        padding: 8px; /* A bit of space around the text input */
-        box-shadow: 0 10px 40px rgba(0,0,0,0.15); /* Stronger shadow to enhance the floating look */
+        border-radius: 50px; /* Changed from 50px to match the popup */
+        padding: 8px; /* Increased padding for a better look in the new shape */
     }
 
-    /* 5. Adjust the text input's internal padding */
     #userInput {
-        padding: 12px;
+        padding: 12px; /* Simplified padding for the new box model */
     }
 
     .welcome-screen { padding: 0 15px; }
