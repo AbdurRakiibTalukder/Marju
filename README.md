@@ -1,10 +1,3 @@
-Of course. Here is a highly detailed, professional, and visually appealing GitHub `README.md`. It incorporates the structure and branding from your HTML, along with best practices for open-source project documentation.
-
-You can copy and paste the entire content below directly into your `README.md` file on GitHub.
-
-***
-
-```markdown
 <div align="center">
   <img src="https://raw.githubusercontent.com/AbdurRakiibTalukder/Marju/main/assets/marju-dark.svg#gh-light-mode-only" alt="Marju Logo" width="200">
   <img src="https://raw.githubusercontent.com/AbdurRakiibTalukder/Marju/main/assets/marju-light.svg#gh-dark-mode-only" alt="Marju Logo" width="200">
@@ -213,4 +206,3 @@ Project Link: [https://github.com/AbdurRakiibTalukder/Marju](https://github.com/
 <div align="center">
   <p><strong>© 2026 Marju Project</strong></p>
 </div>
-```
