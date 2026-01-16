@@ -1,8 +1,6 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/AbdurRakiibTalukder/Marju/main/assets/marju-dark.svg#gh-light-mode-only" alt="Marju Logo" width="200">
   <img src="https://raw.githubusercontent.com/AbdurRakiibTalukder/Marju/main/assets/marju-light.svg#gh-dark-mode-only" alt="Marju Logo" width="200">
-
-  <h1>Marju</h1>
   
   <p><strong>Your Dual-Core AI Companion. Running 100% Offline.</strong></p>
   <p>No servers. No data leaks. Switch between "Marju" (Emotional Support) and "Marjuni" (Ruthless Logic) instantly in your browser.</p>
