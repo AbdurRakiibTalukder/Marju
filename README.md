@@ -109,7 +109,7 @@ Getting Marju running is as simple as it gets. No build steps, no dependencies.
 
 1.  **Clone the repository:**
     ```sh
-    git clone https://github.com/AbdurRakiibTalukder/Marju.git
+    git marju
     ```
 2.  **Navigate to the directory:**
     ```sh
