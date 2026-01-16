@@ -606,7 +606,7 @@ body.dark-mode.incognito-mode .copy-toast { color: black; }
     .input-area.centered { 
         width: 100%; 
         bottom: 0; 
-        padding: 0 15px 170px;
+        padding: 0 15px 190px;
     }
 
     /* This is the main style change */
