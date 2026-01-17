@@ -21,8 +21,8 @@
 </div>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/AbdurRakiibTalukder/Marju/main/assets/dex-dark.png#gh-light-mode-only" alt="Desktop App Interface" width="80%">
-    <img src="https://raw.githubusercontent.com/AbdurRakiibTalukder/Marju/main/assets/dex-light.png#gh-dark-mode-only" alt="Desktop App Interface" width="80%">
+  <img src="https://raw.githubusercontent.com/AbdurRakiibTalukder/Marju/main/assets/dex-white.png#gh-light-mode-only" alt="Desktop App Interface" width="80%">
+    <img src="https://raw.githubusercontent.com/AbdurRakiibTalukder/Marju/main/assets/dex-dark.png#gh-dark-mode-only" alt="Desktop App Interface" width="80%">
 </div>
 
 ---
